@@ -1,8 +1,8 @@
 # Welcome to SalePal
 
-@(The predictive customer relationship manager)
+`The predictive customer relationship manager`
 
-@[Backbone.js|Ruby on Rails|Gmail OAuth]
+`Backbone.js` `Ruby on Rails` `Gmail OAuth`
 
 **SalePal** is a simple to use customer relationship manager (CRM) for startup sales teams, helping to make more effective conversations with leads by having all necessary data at the right moment.
 
