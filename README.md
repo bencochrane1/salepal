@@ -10,4 +10,5 @@
 - **Simple Interface** -  we have removed much of the clutter of traditional CRMs to let your sales staff make calls and emails.
 - **Predictive** - SalePal allows you to set your companies business model and forecast into the future using lead flow and sales member conversion rates to indicate if revenue and profit are likely to be met for future quarters.
 
-> Check out SalePal here: [salepal.herokuapp.com](https://salepal.herokuapp.com/), and try it for yourself.
+> Check out SalePal here: <a href="https://salepal.herokuapp.com/" target="_blank">salepal.herokuapp.com</a>, and try it for yourself.
+
