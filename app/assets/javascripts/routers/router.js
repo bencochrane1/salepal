@@ -30,7 +30,6 @@ App.Router = Backbone.Router.extend({
   },
 
   showLead: function(id) {
-    console.log("show this lead");
     var newLeadCollection = new App.Leads();
     newLeadCollection.fetch().then(function() {
       var leadModel = newLeadCollection.get(id);
@@ -41,7 +40,6 @@ App.Router = Backbone.Router.extend({
 
 
 });
-
 
 
 App.router = new App.Router();
