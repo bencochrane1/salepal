@@ -1,13 +1,12 @@
 Rails.application.routes.draw do
 
-  
-
-  scope '/api' do
-    resources :leads
-  end
+    scope '/api' do
+        resources :leads
+    end
 
     root 'welcome#index'
+    # root 'welcome#index'
 
-  get "*foo" => "welcome#index"
+    get "*foo" => "welcome#index"
 
 end
