@@ -24,9 +24,4 @@ var App = App || {}
 
 $(function() {
   Backbone.history.start({ pushState: true });
-  $('[data-toggle="tooltip"]').tooltip()
 });
-
-// $(function () {
-//   $('[data-toggle="tooltip"]').tooltip()
-// })

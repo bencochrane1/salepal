@@ -1,5 +1,38 @@
+* {
+    font-family: 'Droid Sans', sans-serif;
+}
+
 a {
     text-decoration: none !important;
+    color: #57bb89;
+}
+
+table {
+  -webkit-box-shadow:      1px 1px 6px 1px lightgrey;    
+  -moz-box-shadow:         1px 1px 6px 1px lightgrey;    
+  box-shadow:              1px 1px 6px 1px lightgrey;    
+}
+
+.collapse.navbar-collapse.navbar-ex1-collapse {
+    background-color: #fed587;
+    color: #9da3b3 !important;
+}
+
+body, .nav.navbar-nav.side-nav, #wrapper {
+    background-color: #4c5365 !important;
+    color: #9da3b3 !important;
+}
+
+.nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover {
+    background-color: #57bb89;
+}
+
+.table-hover>tbody>tr:hover {
+    background-color: #fed587;
+}
+
+.navbar.navbar-inverse.navbar-fixed-top {
+    border: none;
 }
 
 .right {
@@ -12,11 +45,13 @@ a {
 }
 
 .side-nav {
-    top: 62px;
+    top: 69px;
 }
 
 .navbar-brand {
     line-height: 2em !important;
+    position: relative;
+    left: 3.5em;
 }
 
 
@@ -27,6 +62,7 @@ a {
 #page-wrapper {
     min-height: calc(100vh - 50px);
     overflow-y: scroll; 
+    background-color: #f9f9f9;
 }
 
 .edit-task {
@@ -41,12 +77,17 @@ a {
     margin-left: -2em !important;
 }
 
+.checkbox:hover {
+    color: #4c5365;
+}
+
 .task-header {
-    margin-bottom: -0.5em;
+    margin-bottom: -0.4em;
 }
 
 .task-header {
     line-height: 0.7em;
+    margin-top: 0.2em;
 }
 
 .opportunity-label {
@@ -54,5 +95,182 @@ a {
 }
 
 .row {
-    padding: 0.3em;
+    padding: 0 1em;
+}
+
+
+.contact-glyphicon {
+    margin-right: 1em;
+}
+
+
+.page-header.btn-group.btn-group-justified {
+    border-bottom: none;
+}
+
+.status-select {
+    border-bottom: none;
+}
+
+
+.page-header.right.form-control {
+    width: 15em !important;
+}
+
+.thumbnail-circle {
+    height: 5em;
+    width: 5em;
+    border-radius: 4em;
+    border: 1px solid grey;
+}
+
+.absolutely-centered {
+  display: inline-block;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  margin: 0;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -m-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.timeline-icon {
+    border: 3px solid lightgrey;
+    background-color: #333;
+    padding: 0.5em;
+    border-radius: 2em;
+    position: relative;
+    top: -0.4em;
+}
+
+.glyphicon.timeline-icon {
+    transition: border 0.5s ease;
+    color: white;
+}
+
+
+.glyphicon.timeline-icon:hover {
+    border: 3px solid #fed587;
+}
+
+
+.timeline-sort {
+    margin-top: -2em;
+}
+
+.timeline-content {
+    margin-left: -1em;
+}
+
+.timeline-profile-image {
+    height: 2.1em;
+    width: 2.1em;
+    border-radius: 2em;
+    position: relative;
+    top: -0.3em;
+    border: 3px solid grey;
+}
+
+.salesperson-first-name {
+    color: grey;
+    margin-right: 0.5em;
+}
+
+.panel-default>.panel-heading, .panel-default > .panel-heading {
+    background-color: white;
+}
+
+.panel-body {
+    padding: 0.5em 0.5em 0.5em 1em;
+}
+
+
+.days-ago {
+    color: grey;
+    border-bottom: 1px dotted grey;
+}
+
+.timeline-row .edit {
+    margin-left: 1em;
+    visibility: hidden;
+}
+
+.timeline-row:hover .edit {
+    visibility: visible;
+}
+
+.email-timeline-name {
+    color: grey;
+}
+
+.glyphicon-play {
+    color: grey;      
+}
+
+.company-logo {
+    height: 5em;
+    width: 5em !important;
+    position: relative;
+    left: 5.3em;
+    top: 1em;
+    margin-bottom: -1em;
+    border-radius: 4em;
+    background-color: #fed587;
+}
+
+.side-nav li a, .side-nav li a {
+    transition: background-color 0.3s ease;
+}
+
+.side-nav li a:hover, .side-nav li a:focus {
+    background-color: #fed587 !important;   
+}
+
+.company-heading {
+    position: relative;
+    left: 2.6em;
+    color: #9da3b3;
+}
+
+.shadow {
+  -moz-box-shadow:    3px 3px 5px 6px #4c5365;
+  -webkit-box-shadow: 3px 3px 5px 6px #4c5365;
+  box-shadow:         3px 3px 5px 6px #4c5365;
+}
+
+
+.smart-views-plus-icon {
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+
+.form-control.search-bar {
+    height: 3em;
+    position: relative;
+    left: 11em;
+}
+
+.nav.nav-pills {
+    position: relative;
+    left: 4em;
+}
+
+..label-success {
+    background-color: #57bb89 !important;
+}
+
+.timeline-input-select {
+    transition: background-color 0.3s ease;
+}
+
+
+.timeline-input-select:hover {
+    background-color: #fed587;
+    /*color: white;*/
 }
