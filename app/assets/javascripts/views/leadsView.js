@@ -3,7 +3,7 @@ var App = App || {};
 App.LeadsView = Backbone.View.extend ({
 
   events: {
-    // 'click .create-flight-button': 'renderFlightCreateForm',
+    'click tr': 'linkToLeadShow',
     // 'submit form': 'createFlight',
     // 'click .cancel-flight': 'cancelFlight',
     // 'keyup .origin': 'searchFlights',
@@ -24,21 +24,32 @@ App.LeadsView = Backbone.View.extend ({
 
   renderCollection: function (data) {
 
-    this.$el.find("div.list-group").html("");
+    this.$el.find("tbody").html("");
 
     data.each(function(lead){
-      var leadView = new App.LeadView ({ model: lead });
-      this.$el.find("div.list-group").append(leadView.render().el);
+      var leadView = new App.LeadView({ model: lead });
+      this.$el.find("tbody").append(leadView.render().el);
     }, this);
   },
 
+  // renderLeadLinkCollection: function() {
+  //   console.log("its the a tags for the leads");
+  // },
+
 
   render: function () {
-    console.log("we are rendering")
     this.$el.html(JST['leads/app']());
     this.renderCollection(this.collection);
+    // this.renderLeadLinkCollection(this.collection);
     return this;
   },
+
+  linkToLeadShow: function(event) {
+    var span = $(event.currentTarget).children("span");
+    var leadLink = span.attr("data-url");
+    App.router.openPage(leadLink);
+
+  }
 
   // renderFlightCreateForm: function() {
   //   this.$el.find('.input-field').show();

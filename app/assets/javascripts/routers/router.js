@@ -9,7 +9,11 @@ App.Router = Backbone.Router.extend({
   routes: {
     "leads": "allLeads",
     "dashboard": "theDashboard",
-    "": "theDashboard"
+    "": "theDashboard",
+    "smart-views": "smartViews",
+    "reporting": "reportingView",
+    "tasks": "allTasks",
+    "leads/:id": "showLead"
   },
 
   allLeads: function() {
@@ -23,6 +27,16 @@ App.Router = Backbone.Router.extend({
   theDashboard: function() {
     var dashboardView = new App.DashboardView();
     $("#container").html(dashboardView.render().el);
+  },
+
+  showLead: function(id) {
+    console.log("show this lead");
+    var newLeadCollection = new App.Leads();
+    newLeadCollection.fetch().then(function() {
+      var leadModel = newLeadCollection.get(id);
+      var showLeadView = new App.ShowLeadView( { model: leadModel });
+      $("#container").html(showLeadView.render().el);
+    });
   }
 
 

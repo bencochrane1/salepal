@@ -34,8 +34,7 @@ App.DashboardView = Backbone.View.extend ({
 
 
   render: function () {
-    console.log("we are rendering the dashboard")
-    this.$el.html(JST['leads/dashboard']());
+    this.$el.html(JST['dashboard/app']());
     // this.renderCollection(this.collection);
     return this;
   },

@@ -1,0 +1,58 @@
+a {
+    text-decoration: none !important;
+}
+
+.right {
+    float: right;
+}
+
+.form-control {
+    margin: 1em;
+    width: 25em !important;
+}
+
+.side-nav {
+    top: 62px;
+}
+
+.navbar-brand {
+    line-height: 2em !important;
+}
+
+
+.leads-hover tbody tr:hover {
+    cursor: pointer;
+}
+
+#page-wrapper {
+    min-height: calc(100vh - 50px);
+    overflow-y: scroll; 
+}
+
+.edit-task {
+    padding-right: 1em;
+}
+
+.edit-task, .edit-opportunity:hover {
+    cursor: pointer;
+}
+
+.checkbox {
+    margin-left: -2em !important;
+}
+
+.task-header {
+    margin-bottom: -0.5em;
+}
+
+.task-header {
+    line-height: 0.7em;
+}
+
+.opportunity-label {
+    font-size: 1em;
+}
+
+.row {
+    padding: 0.3em;
+}
