@@ -8,6 +8,7 @@ App.Router = Backbone.Router.extend({
 
   routes: {
     "leads": "allLeads",
+    "opportunities": "allOpportunities"
     "dashboard": "theDashboard",
     "": "theDashboard",
     "smart-views": "smartViews",

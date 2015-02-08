@@ -143,11 +143,15 @@ body, .nav.navbar-nav.side-nav, #wrapper {
 
 .timeline-icon {
     border: 3px solid lightgrey;
-    background-color: #333;
+    background-color: #4c5365;
     padding: 0.5em;
     border-radius: 2em;
     position: relative;
     top: -0.4em;
+}
+
+.badge {
+    background-color: #4c5365 !important; 
 }
 
 .glyphicon.timeline-icon {
