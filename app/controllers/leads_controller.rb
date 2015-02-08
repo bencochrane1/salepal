@@ -15,6 +15,12 @@ class LeadsController < ApplicationController
     render json: @lead
   end
 
+  def destroy
+    @lead = Lead.find(params[:id])
+    @lead.destroy
+    render json: { status: "OK" }
+  end
+
 private
 
   def lead_params

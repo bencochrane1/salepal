@@ -103,9 +103,13 @@ body, .nav.navbar-nav.side-nav, #wrapper {
     margin-right: 1em;
 }
 
-
 .page-header.btn-group.btn-group-justified {
     border-bottom: none;
+}
+
+.timeline-options {
+    position: relative !important;
+    margin-left: 4em !important;
 }
 
 .status-select {
@@ -250,7 +254,7 @@ body, .nav.navbar-nav.side-nav, #wrapper {
     transform: rotate(90deg);
 }
 
-.form-control.search-bar {
+.form-control.search-bar, .new-lead {
     height: 3em;
     position: relative;
     left: 11em;
@@ -286,7 +290,50 @@ body, .nav.navbar-nav.side-nav, #wrapper {
     transition: color 0.2s ease;
 }
 
+.cancel-title-edit {
+    margin-left: 0.5em;
+}
+
 .lead-title-submit:hover, .cancel-title-edit:hover {
     cursor: pointer;
     color: #57bb89;
 }
+
+.delete-lead, .merge-lead {
+    transition: color 0.2s ease;
+}
+
+.merge-lead:hover, .delete-lead:hover {
+    cursor: pointer;
+    color: #57bb89;
+}
+
+.lead-title-save, input.title {
+    word-wrap: break-word; 
+}
+
+.new-lead, .cancel {
+    border: none;
+    background-color: #9da3b3;
+    color: #f9f9f9;
+    transition: color 0.3s ease;
+    transition: background-color 0.3s ease;
+}
+
+.new-lead:hover, .cancel:hover {
+    background-color: #4c5365;
+    color: #f9f9f9;
+}
+
+
+
+.green {
+    transition: background-color 0.3s ease;
+    background-color: #57bb89;
+    border: none;
+}
+
+.green:hover {
+    background-color: #37A36D;
+}
+
