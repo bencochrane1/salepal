@@ -5,7 +5,6 @@ Rails.application.routes.draw do
     end
 
     root 'welcome#index'
-    # root 'welcome#index'
 
     get "*foo" => "welcome#index"
 

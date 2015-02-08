@@ -1,7 +1,6 @@
 var App = App || {};
 
 App.LeadView = Backbone.View.extend({
-  // tagName: 'tr',
   tagName: 'tr',
 
   render: function() {

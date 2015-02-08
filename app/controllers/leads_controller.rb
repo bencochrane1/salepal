@@ -9,10 +9,16 @@ class LeadsController < ApplicationController
     render json: @lead
   end
 
+  def update
+    @lead = Lead.find(params[:id])
+    @lead.update(lead_params)
+    render json: @lead
+  end
+
 private
 
   def lead_params
-    params.require(:lead).permit(:title, :status, :task_id, :note_id, :contact_id, :opportunity_id)
+    params.require(:lead).permit(:title, :status_id, :task_id, :note_id, :contact_id, :opportunity_id)
   end
 
 

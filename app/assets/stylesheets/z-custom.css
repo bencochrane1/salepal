@@ -274,3 +274,19 @@ body, .nav.navbar-nav.side-nav, #wrapper {
     background-color: #fed587;
     /*color: white;*/
 }
+
+.lead-title-submit, .lead-title-cancel {
+    background: none!important;
+     border: none; 
+     padding: 0!important;
+     cursor: pointer;
+}
+
+.cancel-title-edit, .lead-title-submit {
+    transition: color 0.2s ease;
+}
+
+.lead-title-submit:hover, .cancel-title-edit:hover {
+    cursor: pointer;
+    color: #57bb89;
+}
