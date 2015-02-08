@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  status: MyString
+  confidence: 1
+  value: 1
+  frequency: MyString
+  comments: MyText
+  user_id: 1
+
+two:
+  status: MyString
+  confidence: 1
+  value: 1
+  frequency: MyString
+  comments: MyText
+  user_id: 1

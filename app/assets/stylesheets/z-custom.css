@@ -254,10 +254,15 @@ body, .nav.navbar-nav.side-nav, #wrapper {
     transform: rotate(90deg);
 }
 
-.form-control.search-bar, .new-lead {
+.form-control.search-bar {
     height: 3em;
     position: relative;
     left: 11em;
+}
+
+.new-lead {
+    position: relative;
+    left: 1em;
 }
 
 .nav.nav-pills {

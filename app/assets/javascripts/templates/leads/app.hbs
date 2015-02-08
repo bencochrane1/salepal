@@ -3,18 +3,21 @@
 
     <div class="container-fluid">
 
-        <!-- Page Heading -->
+        
         <div class="row">
             <div class="col-lg-12">
                 <h1 class="page-header">
-                    Leads <small>All Leads</small>
+                    Leads 
+                    <button type="button" class="btn btn-default new-lead" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" ><span class="glyphicon glyphicon-plus"></span> New Lead</button>
+
+
                     <small class="right">Upload New Leads</small>
                 </h1>
 
 
             </div>
         </div>
-        <!-- /.row -->
+        
 
         <div class="row">
             <div class="col-lg-12">
@@ -24,18 +27,16 @@
                 </div>
             </div>
         </div>
-        <!-- /.row -->
+        
 
-        <div class="row">
 
-        </div>
-        <!-- /.row -->
+        
 
         <div class="row">
 
 
             <div class="col-lg-12">
-                {{!-- <div class="panel panel-default"> --}}
+                
                     <div class="panel-heading">
                         <h3 class="panel-title"><i class="fa fa-money fa-fw"></i>
                             {{ leads.length }} Results
@@ -55,13 +56,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                {{!-- 
-                                    <a class="lead-links" href="leads/{{id}}">
-                                      <tr>
-                                      
-                                      
-                                      </tr>
-                                  </a> --}}
+
                                 </tbody>
                             </table>
                         </div>
@@ -72,16 +67,32 @@
 
         </div>
 
-
-        <div class="row">
- 
-            
-  
-        </div>
-        <!-- /.row -->
-
     </div>
-    <!-- /.container-fluid -->
+
+<!-- modal for add new lead -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="exampleModalLabel">Add a New Lead</h4>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="recipient-name" class="control-label">Lead Name / Company:</label>
+                <input type="text" class="form-control" id="recipient-name">
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default cancel" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary green create-new-lead">Create New Lead</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
 
 </div>
 

@@ -6,7 +6,7 @@ App.ShowLeadView = Backbone.View.extend ({
         'click .lead-title': 'renderEditForm',
         'submit form': 'updateLeadTitle',
         'click .cancel-title-edit': 'cancelLeadTitleEdit',
-        'click .delete-lead': 'deleteLead'
+        'click .delete-lead': 'deleteLead'        
     },
 
 
@@ -47,5 +47,6 @@ App.ShowLeadView = Backbone.View.extend ({
         this.model.destroy();
         this.remove();
     }
+
 
 });
