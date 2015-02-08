@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  description: MyText
+  due_date: 2015-02-08 22:59:04
+  user_id: 1
+  lead_id: 1
+  completed: false
+
+two:
+  description: MyText
+  due_date: 2015-02-08 22:59:04
+  user_id: 1
+  lead_id: 1
+  completed: false

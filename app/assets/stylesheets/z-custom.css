@@ -346,3 +346,6 @@ body, .nav.navbar-nav.side-nav, #wrapper {
     background-color: #37A36D;
 }
 
+.inline { 
+    display: inline-block;
+}

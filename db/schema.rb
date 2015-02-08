@@ -11,7 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150208091644) do
+ActiveRecord::Schema.define(version: 20150208123841) do
+
+  create_table "contacts", force: :cascade do |t|
+    t.string   "name"
+    t.string   "title"
+    t.string   "mobile_number"
+    t.string   "office_number"
+    t.string   "email"
+    t.string   "url"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.integer  "lead_id"
+  end
 
   create_table "leads", force: :cascade do |t|
     t.string   "title"
@@ -21,6 +33,13 @@ ActiveRecord::Schema.define(version: 20150208091644) do
     t.integer  "contact_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "notes", force: :cascade do |t|
+    t.text     "description"
+    t.integer  "lead_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "opportunities", force: :cascade do |t|
@@ -33,6 +52,16 @@ ActiveRecord::Schema.define(version: 20150208091644) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "lead_id"
+  end
+
+  create_table "tasks", force: :cascade do |t|
+    t.text     "description"
+    t.datetime "due_date"
+    t.integer  "user_id"
+    t.integer  "lead_id"
+    t.boolean  "completed"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
 end

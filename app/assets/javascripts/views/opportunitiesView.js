@@ -13,18 +13,18 @@ App.OpportunitiesView = Backbone.View.extend ({
 
   renderCollection: function (data) {
 
-    // this.$el.find("tbody").html("");
-
-    // data.each(function(lead){
-    //   var leadView = new App.LeadView({ model: lead });
-    //   this.$el.find("tbody").append(leadView.render().el);
-    // }, this);
+    this.$el.find("div.opportunity-panel").html("");
+    
+    data.each(function(opportunity){
+      var opportunityView = new App.OpportunityView({ model: opportunity });
+      this.$el.find("div.opportunity-panel").append(opportunityView.render().el);
+    }, this);
   },
 
   render: function () {
-    // this.$el.html(JST['leads/app']());
-    // this.renderCollection(this.collection);
-    // return this;
+    this.$el.html(JST['leads/show']());
+    this.renderCollection(this.collection);
+    return this;
   },
 
   linkToLeadShow: function(event) {

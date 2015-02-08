@@ -6,9 +6,9 @@ App.ShowLeadView = Backbone.View.extend ({
         'click .lead-title': 'renderEditForm',
         'submit form': 'updateLeadTitle',
         'click .cancel-title-edit': 'cancelLeadTitleEdit',
-        'click .delete-lead': 'deleteLead'        
+        'click .delete-lead': 'deleteLead',
+        'keyup .search-bar': 'searchLeads'        
     },
-
 
     render: function() {
         this.$el.html(JST['leads/show'](this.model.toJSON()));
@@ -46,6 +46,10 @@ App.ShowLeadView = Backbone.View.extend ({
         // }});
         this.model.destroy();
         this.remove();
+    },
+
+    searchLeads: function() {
+        console.log("this is the search bar");
     }
 
 

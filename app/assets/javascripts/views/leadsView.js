@@ -4,7 +4,9 @@ App.LeadsView = Backbone.View.extend ({
 
   events: {
     'click tr': 'linkToLeadShow',
-    'click .create-new-lead': 'createNewLead'       
+    'click .create-new-lead': 'createNewLead',
+    'keyup .create-new-lead': 'createNewLead',
+    'keyup .search-bar': 'searchLeads'     
   },
 
 
@@ -36,18 +38,34 @@ App.LeadsView = Backbone.View.extend ({
 
   createNewLead: function(event, lead) {
     event.preventDefault();
-    var title = this.$el.find('#recipient-name').val();
-    if (title == "")
-      alert("Make sure you enter a lead name :)");
-    else {
-      var newLead = this.collection.create({ title: title })
-    }
-    this.$el.find(".modal").fadeOut();
+
+      var title = this.$el.find('#recipient-name').val();
+      if (title == "" )
+        alert("Make sure you enter a lead name :)");
+      else {
+        var newLead = this.collection.create({ title: title })
+        this.$el.find(".modal").fadeOut();
+      }
+      
+
   },
 
   appendNewLead: function(lead) {
     var leadView = new App.LeadView({ model: lead });
     this.$el.find(".leads-hover").append(leadView.render().el);
+  },
+
+  searchLeads: function() {
+
+    var searchInput = this.$el.find("input.search-bar").val();
+    console.log(searchInput)
+
+    if (searchInput === "") {
+      this.renderCollection(this.collection);
+    } else {
+      this.renderCollection(this.collection.filterBySearch(searchInput));   
+    }
+
   }
 
 });
