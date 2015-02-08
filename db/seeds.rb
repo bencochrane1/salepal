@@ -1,8 +1,8 @@
-lead1 = Lead.create(title: "bencochrane1@me.com", status_id: 1)
-lead2 = Lead.create(title: "bencochrane2@me.com", status_id: 2)
-lead3 = Lead.create(title: "bencochrane3@me.com", status_id: 3)
-lead4 = Lead.create(title: "bencochrane4@me.com", status_id: 4)
-lead5 = Lead.create(title: "bencochrane5@me.com", status_id: 5)
+lead1 = Lead.create(title: "bencochrane1@me.com", status: "hot lead")
+lead2 = Lead.create(title: "bencochrane2@me.com", status: "warm lead")
+lead3 = Lead.create(title: "bencochrane3@me.com", status: "hot lead")
+lead4 = Lead.create(title: "bencochrane4@me.com", status: "cold lead")
+lead5 = Lead.create(title: "bencochrane5@me.com", status: "hot lead")
 
 Opportunity.create(status: "active", confidence: 70, value: 15000, frequency: 0, comments: "A great person to do business with, likes to be called Bill.", lead_id: lead1.id )
 Opportunity.create(status: "won", confidence: 100, value: 10000, frequency: 0, comments: "Got the deal - needed to come in on price though.", lead_id: lead1.id )
