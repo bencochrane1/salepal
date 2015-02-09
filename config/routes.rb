@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
     root 'welcome#index'
 
-    get "/auth/:provider/callback" => 'api/sessions#create'
+    get "/auth/:provider/callback" => 'leads#index'
     
     get "*foo" => "welcome#index"
 
