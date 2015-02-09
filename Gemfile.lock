@@ -208,7 +208,6 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   json
-  omniauth (~> 1.2.2)
   omniauth-google-oauth2
   pg
   pry

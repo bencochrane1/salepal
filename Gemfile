@@ -4,7 +4,6 @@ gem 'rails', '4.2.0'
 
 gem 'handlebars_assets'
 
-gem 'omniauth', '~> 1.2.2'
 gem 'omniauth-google-oauth2'
 gem 'json'
 
