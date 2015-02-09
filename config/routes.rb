@@ -10,13 +10,13 @@ Rails.application.routes.draw do
     end
 
     root 'welcome#landingpage'
-    get "/dashboard" => "welcome#index"
-    get "*foo" => "welcome#index"
+    get "/dashboard" => "welcome#index", as: :dashboard
 
     get "/auth/:provider/callback" => "sessions#create"
-    get "auth/failure", to: redirect('/')
-    get "signout", to: "sessions#destroy", as: "signout"
+    get "/auth/failure", to: redirect('/')
+    get "/signout", to: "sessions#destroy", as: "signout"
 
+    get "*foo" => "welcome#index"
 end
 
 

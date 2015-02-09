@@ -267,6 +267,11 @@ body, .nav.navbar-nav.side-nav, #wrapper {
     left: 11em;
 }
 
+.google-name {
+    position: relative;
+    left: 11em;
+}
+
 .new-lead {
     position: relative;
     left: 1em;
