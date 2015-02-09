@@ -4,6 +4,10 @@ gem 'rails', '4.2.0'
 
 gem 'handlebars_assets'
 
+gem 'omniauth', '~> 1.2.2'
+gem 'omniauth-google-oauth2'
+gem 'json'
+
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'

@@ -12,11 +12,11 @@ App.OpportunitiesView = Backbone.View.extend ({
   // },
 
   renderCollection: function (data) {
-    $(".opportunity-panel").html("");
+    $(".opportunity-panel-holder").html("");
     if (data) {
       data.forEach(function(opportunity){
         var opportunityView = new App.OpportunityView({ model: opportunity });
-        this.$el.find(".opportunity-panel").append(opportunityView.render().el);
+        this.$el.find(".opportunity-panel-holder").append(opportunityView.render().el);
       }, this);
     }
   },

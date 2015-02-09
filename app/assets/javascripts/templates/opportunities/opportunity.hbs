@@ -1,2 +1,21 @@
-{{status}}<br>
-{{confidence}}<br>
+<div class="panel panel-default opportunity-panel">
+
+    <div class="panel-heading">
+
+        <h3 class="panel-title"><span class="opportunity-label label label-success">${{value}}</span> John Salesguy <span class="badge">{{status}}</span>
+        <a data-toggle="tooltip" data-placement="top" title="Edit this opportunity" class="right edit-opportunity"><span class="right glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
+        </h3>
+
+    </div>
+
+    <div class="panel-body">
+        <p>{{comments}}</p>
+    </div>
+</div>
+{{!-- 
+
+
+Opportunity.create(status: "active", confidence: 70, value: 15000, frequency: 0, comments: "A great person to do business with, likes to be called Bill.", lead_id: lead1.id )
+Opportunity.create(status: "won", confidence: 100, value: 10000, frequency: 0, comments: "Got the deal - needed to come in on price though.", lead_id: lead1.id )
+Opportunity.create(status: "lost", confidence: 0, value: 35000, frequency: 0, comments: "Not a priority to upgrade right now", lead_id: lead1.id )
+ --}}
