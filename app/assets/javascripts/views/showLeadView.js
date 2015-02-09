@@ -10,7 +10,8 @@ App.ShowLeadView = Backbone.View.extend ({
         'change .status-dropdown' : 'updateLeadStatus',
         'click .create-opportunity-button': 'renderOpportunityCreateForm', 
         'click .save-opportunity-button': 'saveOpportunityCreateForm', 
-        'click .cancel': 'cancelNewOpportunity'
+        'click .cancel': 'cancelNewOpportunity',
+        'click .new-opp-trash': 'cancelNewOpportunity'
     },
 
     initialize: function() {

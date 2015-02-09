@@ -368,3 +368,7 @@ body, .nav.navbar-nav.side-nav, #wrapper {
 .opportunity-edit-form-holder .col-md-6, .opportunity-edit-form-holder .col-md-12  {
     margin-top: 0.8em;
 }
+
+.new-opp-trash:hover {
+    cursor: pointer;
+}
