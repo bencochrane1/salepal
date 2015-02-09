@@ -23,10 +23,6 @@ App.LeadsView = Backbone.View.extend ({
       this.$el.find("tbody").append(leadView.render().el);
     }, this);
 
-
-    // var newOpportunitiesView = new App.OpportunitiesView();
-    // newOpportunitiesView.render();
-
   },
 
   render: function () {
@@ -43,7 +39,6 @@ App.LeadsView = Backbone.View.extend ({
 
   createNewLead: function(event, lead) {
     event.preventDefault();
-    console.log("WHAT")
     var title = this.$el.find('#recipient-name').val();
     if (title == "" ) {
       alert("Make sure you enter a lead name :)");

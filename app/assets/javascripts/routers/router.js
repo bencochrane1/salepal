@@ -14,7 +14,6 @@ App.Router = Backbone.Router.extend({
     "smart-views": "smartViews",
     "reporting": "reportingView",
     "tasks": "allTasks"
-    
   },
 
   allLeads: function() {
@@ -72,16 +71,5 @@ $("body").on("click", "a", function(event) {
 $("body").on("keyup", ".search-bar", function(event) {
   App.router.navigate('leads', { trigger: true });
   App.leadsView.searchLeads();
-  // var searchInput = $(".search-bar").val();
-  // console.log(searchInput);
-
 });
-
-
-// $('input.new-lead-input').keyup(function(event) {
-//   event.preventDefault();
-//   if(event.keyCode == 13) {
-//     $(this).trigger('enter');
-//   }
-// });
 

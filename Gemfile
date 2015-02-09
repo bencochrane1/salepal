@@ -7,6 +7,8 @@ gem 'handlebars_assets'
 gem 'omniauth-google-oauth2'
 gem 'json'
 
+gem 'bootstrap-slider-rails'
+
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'

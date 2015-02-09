@@ -9,7 +9,7 @@
 Landing Page
 
     <% if current_user %>
-        Signed in as <%= current_user.full_name %>
+        Signed in as <%= current_user.first_name %>
         <%= link_to "Sign out", signout_path %>
     <% else %>
         <%= link_to "Signin with Google", 'auth/google_oauth2' %>

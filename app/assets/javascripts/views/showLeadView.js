@@ -6,8 +6,17 @@ App.ShowLeadView = Backbone.View.extend ({
         'click .lead-title': 'renderEditForm',
         'submit form': 'updateLeadTitle',
         'click .cancel-title-edit': 'cancelLeadTitleEdit',
-        'click .delete-lead': 'deleteLead'     
+        'click .delete-lead': 'deleteLead',
+        'change .status-dropdown' : 'updateLeadStatus',
+        'click .create-opportunity-button': 'renderOpportunityCreateForm', 
+        'click .save-opportunity-button': 'saveOpportunityCreateForm', 
+        'click .cancel': 'cancelNewOpportunity'
     },
+
+    initialize: function() {
+        App.newOpportunityView = new App.OpportunityView();
+        App.newOpportunityView.on("change", this.appendNewOpportunity, this);
+    },    
 
     render: function() {
         this.$el.html(JST['leads/show'](this.model.toJSON()));
@@ -22,11 +31,28 @@ App.ShowLeadView = Backbone.View.extend ({
         this.$el.find(".title").select();
     },
 
+    updateLeadStatus: function() {
+        var dropdownStatus = this.$el.find(".status-dropdown").val();
+        var dropdownText;
+
+        if (dropdownStatus == "Hot") {
+            dropdownText = "hot lead";
+        } else if (dropdownStatus == "Warm") {
+            dropdownText = "warm lead";
+        } else {
+            dropdownText = "cold lead";
+        }
+
+        this.model.save({
+            status: dropdownText
+        });
+    },
+
     updateLeadTitle: function(event) {
         event.preventDefault();
 
         this.model.save({
-            title: this.$el.find(".title").val()
+            title: this.$el.find(".title").val(),
         });
 
         this.$el.find("form").fadeOut();
@@ -48,6 +74,41 @@ App.ShowLeadView = Backbone.View.extend ({
             this.remove();
         }
 
+    },
+
+    saveOpportunityCreateForm: function(event, opportunity) {
+
+        event.preventDefault();
+        var status = this.$el.find('#opp-status-dropdown').val();
+        var confidence = this.$el.find('.opp-percentage').val();
+        var value = this.$el.find('.opp-value').val();
+        var assigned_to = this.$el.find('.opp-assigned-dropdown').val();
+        var comments = this.$el.find('.opportunity-comments').val();
+        
+        if (status == "" || confidence == "" || value == "" || assigned_to == "" || comments == "") {
+          alert("Let's put in at least the value for this opportunity.");
+        } else {
+        var newOpportunity = App.newOpportunityCollection.create({ status: status });  
+        }
+    },
+
+    appendNewOpportunity: function(opportunity) {
+        var opportunityView = new App.OpportunityView({ model: opportunity });
+        this.$el.find(".opportunity-panel-holder").append(opportunityView.render().el);
+    },
+
+
+    renderOpportunityCreateForm: function(event) {
+        event.preventDefault();
+        event.stopPropagation();
+        this.$el.find(".opportunity-edit-form-holder").html(JST['opportunities/edit-form']());
+    }, 
+
+    cancelNewOpportunity: function() {
+        this.$el.find(".opportunity-edit-form-holder").fadeOut("fast");
+        opportunityView.render();
     }
+
+
 
 });

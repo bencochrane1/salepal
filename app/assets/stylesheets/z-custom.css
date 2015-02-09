@@ -39,9 +39,13 @@ body, .nav.navbar-nav.side-nav, #wrapper {
     float: right;
 }
 
-.form-control {
+.left {
+    float: left;
+}
+
+.form-control.search-bar {
     margin: 1em;
-    width: 25em !important;
+    width: 25em;
 }
 
 .side-nav {
@@ -191,10 +195,9 @@ body, .nav.navbar-nav.side-nav, #wrapper {
     background-color: white;
 }
 
-.panel-body {
+.panel-body.show-lead {
     padding: 0.5em 0.5em 0.5em 1em;
 }
-
 
 .days-ago {
     color: grey;
@@ -334,8 +337,6 @@ body, .nav.navbar-nav.side-nav, #wrapper {
     color: #f9f9f9;
 }
 
-
-
 .green {
     transition: background-color 0.3s ease;
     background-color: #57bb89;
@@ -348,4 +349,22 @@ body, .nav.navbar-nav.side-nav, #wrapper {
 
 .inline { 
     display: inline-block;
+}
+
+.opportunity-comments {
+    min-height: 3em;
+    word-wrap: break-word; 
+}
+
+
+.margin-left {
+    margin-left: 1em;
+}
+
+.create-new-opportunity {
+    min-width: 6em;
+}
+
+.opportunity-edit-form-holder .col-md-6, .opportunity-edit-form-holder .col-md-12  {
+    margin-top: 0.8em;
 }

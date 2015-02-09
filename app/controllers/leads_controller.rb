@@ -24,7 +24,7 @@ class LeadsController < ApplicationController
 private
 
   def lead_params
-    params.require(:lead).permit(:title, :status_id, :task_id, :note_id, :contact_id)
+    params.require(:lead).permit(:title, :status, :task_id, :note_id, :contact_id)
   end
 
 

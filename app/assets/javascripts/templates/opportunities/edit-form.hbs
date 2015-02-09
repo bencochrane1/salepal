@@ -1,0 +1,141 @@
+{{!--     <div class="panel-body">
+        
+        <div class="container">
+            <div class="col-md-4">
+                
+                <div class="row">
+                    
+                    <div class="page-header opportunity-status-select">
+
+                        <select class="page-header right form-control opportunity-status-dropdown">
+
+                          <option {{#xIf status "==" "active"}} selected {{/xIf}}>Active</option>
+                          <option {{#xIf status "==" "won"}} selected {{/xIf}}>Won</option>
+                          <option {{#xIf status "==" "lost"}} selected {{/xIf}}>Lost</option>
+
+                        </select>                        
+                        
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+ --}}
+
+<div class="opportunity-edit-form-holder panel panel-default">
+                        
+     {{!-- <div class="panel panel-default"> --}}
+
+        <div class="panel-body opp-form panel panel-default">
+
+
+            <div class="row">
+                
+                <div class="col-md-6">
+                    <label for="opp-status-dropdown">Status</label>
+                    <select class="form-control" id="opp-status-dropdown">
+                        <option {{#xIf status "==" "active"}} selected {{/xIf}}>Active</option>
+                        <option {{#xIf status "==" "won"}} selected {{/xIf}}>Won</option>
+                        <option {{#xIf status "==" "lost"}} selected {{/xIf}}>Lost</option>
+                    </select>                    
+                </div>
+
+
+                <div class="col-md-6">
+                    
+  {{!--                   <input id="ex13" type="text" data-slider-ticks="[0, 100, 200, 300, 400]" data-slider-ticks-snap-bounds="30" data-slider-ticks-labels="['$0', '$100', '$200', '$300', '$400']"/>
+ --}}
+                        <label for="opp-assigned-dropdown">Confidence</label>
+                        <form class="form-inline">
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <input type="text" class="form-control opp-percentage" id="exampleInputAmount" placeholder="Percentage">
+                                    <div class="input-group-addon">%</div>
+                                </div>
+                            </div>
+                            
+                        </form>  
+
+                </div>
+
+            </div>
+
+
+            <div class="row">
+                
+                <div class="col-md-6">
+                    <label for="opp-assigned-dropdown">Value</label>
+                        <form class="form-inline">
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <div class="input-group-addon">$</div>
+                                    <input type="text" class="form-control opp-value" id="exampleInputAmount" placeholder="Amount">
+                                </div>
+                            </div>
+                            
+                        </form>                   
+                </div>
+
+                <div class="col-md-6">
+                    <label for="opp-freq-dropdown">Frequency</label>
+                    <select class="form-control" id="opp-freq-dropdown">
+                        <option {{#xIf frequency "==" "one-off"}} selected {{/xIf}}>One-off</option>
+                        <option {{#xIf frequency "==" "weekly"}} selected {{/xIf}}>Weekly</option>
+                        <option {{#xIf frequency "==" "fortnightly"}} selected {{/xIf}}>Fortnightly</option>
+                        <option {{#xIf frequency "==" "monthly"}} selected {{/xIf}}>Monthly</option>
+                        <option {{#xIf frequency "==" "yearly"}} selected {{/xIf}}>Yearly</option>
+                    </select>                    
+                </div>
+
+            </div>
+
+
+            <div class="row">
+
+                <div class="col-md-12">
+                    <label for="opp-assigned-dropdown">Assigned To</label>
+                    <select class="form-control" id="opp-assigned-dropdown">
+                        <option {{#xIf user_id "==" "1"}} selected {{/xIf}}>Ben</option>
+                        <option {{#xIf user_id "==" "2"}} selected {{/xIf}}>Bob</option>
+                        <option {{#xIf user_id "==" "3"}} selected {{/xIf}}>Bill</option>
+                    </select>                     
+                </div>
+
+            </div>
+
+
+
+            <div class="row">
+                <div class="col-md-12">
+
+                    <form>
+                      <div class="form-group">
+                        <label for="exampleInputEmail1">Comments</label>
+                        <input type="text" class="form-control opportunity-comments" id="exampleInputEmail1">
+                      </div>
+                    </form>                
+
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+
+                    <h4 class="left"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></h4>
+                    <button type="button" class="btn btn-primary green right save-opportunity-button update-opportunity margin-left">Save</button> 
+                    <button type="button" class="btn btn-default cancel right" data-dismiss="modal">Cancel</button>
+
+                </div>
+            </div>
+
+
+        </div>
+    {{!-- </div> --}}
+
+
+</div>

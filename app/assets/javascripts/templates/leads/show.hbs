@@ -46,27 +46,14 @@
 
                 <div class="row">
                     <h1 class="task-header">
-                        <small>Opportunities<a href="#"><span class="right glyphicon glyphicon-plus" aria-hidden="true"></span></small></a>
+                        <small>Opportunities<a href="#"><span class="right glyphicon glyphicon-plus create-opportunity-button" aria-hidden="true"></span></small></a>
                     </h1>
                     <hr>
-
+                      <div class="opportunity-edit-form-holder">
+                        
+                      </div>
                       <div class="opportunity-panel-holder">
 
-                        {{!-- <div class="panel panel-default opportunity-panel"> --}}
-
-{{!--                           <div class="panel-heading">
-                            <h3 class="panel-title"><span class="opportunity-label label label-success">$20,000</span> John Salesguy <span class="badge">Active</span>
-                            <a data-toggle="tooltip" data-placement="top" title="Edit this opportunity" class="right edit-opportunity"><span class="right glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
-                            </h3>
-                            
-                          </div>
-
-                          <div class="panel-body">
-                            Great client, call him Boch.
-                          </div> --}}
-
-                        {{!-- </div>                     --}}
-                        
                       </div>
                 </div>
 
@@ -127,14 +114,14 @@
 
                     <div class="col-md-5">
                         <div class="page-header status-select">
-                            
-                            <select class="page-header right form-control">
-                            
-                              <option>Status</option>
-                              <option>Cold</option>
-                              <option>Warm</option>
-                              <option>Hot</option>
-                            
+
+                            <select class="page-header right form-control status-dropdown">
+
+                              {{!-- <option {{#xIf status "==" ""}} selected {{/xIf}}>Status</option> --}}
+                              <option {{#xIf status "==" "cold lead"}} selected {{/xIf}}>Cold</option>
+                              <option {{#xIf status "==" "warm lead"}} selected {{/xIf}}>Warm</option>
+                              <option {{#xIf status "==" "hot lead"}} selected {{/xIf}}>Hot</option>
+
                             </select>                        
                             
                         </div>
