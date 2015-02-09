@@ -7,23 +7,23 @@ App.OpportunitiesView = Backbone.View.extend ({
   },
 
 
-  initialize: function() {
-    this.collection.on("change", this.appendNewOpportunity, this);
-  },
+  // initialize: function() {
+  //   this.collection.on("change", this.appendNewOpportunity, this);
+  // },
 
   renderCollection: function (data) {
-
-    this.$el.find("div.opportunity-panel").html("");
-    
-    data.each(function(opportunity){
-      var opportunityView = new App.OpportunityView({ model: opportunity });
-      this.$el.find("div.opportunity-panel").append(opportunityView.render().el);
-    }, this);
+    $(".opportunity-panel").html("");
+    if (data) {
+      data.forEach(function(opportunity){
+        var opportunityView = new App.OpportunityView({ model: opportunity });
+        this.$el.find(".opportunity-panel").append(opportunityView.render().el);
+      }, this);
+    }
   },
 
-  render: function () {
+  render: function (data) {
     this.$el.html(JST['leads/show']());
-    this.renderCollection(this.collection);
+    this.renderCollection(data);
     return this;
   },
 

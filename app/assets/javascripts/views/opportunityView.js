@@ -4,8 +4,8 @@ App.OpportunityView = Backbone.View.extend({
   tagName: 'div',
   // className: 'opportunity-panel'
 
-  render: function() {
-    this.$el.html(JST['opportunities/opportunity'](this.model.toJSON()));
+  render: function(data) {
+    $(".opportunity-panel").append(JST['opportunities/opportunity'](this.model));
     return this;
   }
 });

@@ -1,6 +1,10 @@
 class OpportunitiesController < ApplicationController
   def index
-    render json: Opportunity.all
+    if params["lead_id"]
+      render json: Opportunity.where( { lead_id: params["lead_id"] } )  
+    else
+      render json: Opportunity.all
+    end
   end
 
   def create

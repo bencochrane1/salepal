@@ -4,8 +4,8 @@ App.LeadsView = Backbone.View.extend ({
 
   events: {
     'click tr': 'linkToLeadShow',
-    'click .create-new-lead': 'createNewLead',
-    'keyup .create-new-lead': 'createNewLead',
+    'click button.create-new-lead': 'createNewLead',
+    'submit form.create-new-lead': 'createNewLead',
     'keyup .search-bar': 'searchLeads'     
   },
 
@@ -22,6 +22,11 @@ App.LeadsView = Backbone.View.extend ({
       var leadView = new App.LeadView({ model: lead });
       this.$el.find("tbody").append(leadView.render().el);
     }, this);
+
+
+    // var newOpportunitiesView = new App.OpportunitiesView();
+    // newOpportunitiesView.render();
+
   },
 
   render: function () {
@@ -38,16 +43,14 @@ App.LeadsView = Backbone.View.extend ({
 
   createNewLead: function(event, lead) {
     event.preventDefault();
-
-      var title = this.$el.find('#recipient-name').val();
-      if (title == "" )
-        alert("Make sure you enter a lead name :)");
-      else {
-        var newLead = this.collection.create({ title: title })
-        this.$el.find(".modal").fadeOut();
-      }
-      
-
+    console.log("WHAT")
+    var title = this.$el.find('#recipient-name').val();
+    if (title == "" ) {
+      alert("Make sure you enter a lead name :)");
+    } else {
+      var newLead = this.collection.create({ title: title })
+      this.$el.find(".modal").fadeOut();
+    }
   },
 
   appendNewLead: function(lead) {
@@ -57,8 +60,8 @@ App.LeadsView = Backbone.View.extend ({
 
   searchLeads: function() {
 
-    var searchInput = this.$el.find("input.search-bar").val();
-    console.log(searchInput)
+    var searchInput = $(".search-bar").val();
+    // console.log(searchInput);
 
     if (searchInput === "") {
       this.renderCollection(this.collection);

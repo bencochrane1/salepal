@@ -6,12 +6,13 @@ App.ShowLeadView = Backbone.View.extend ({
         'click .lead-title': 'renderEditForm',
         'submit form': 'updateLeadTitle',
         'click .cancel-title-edit': 'cancelLeadTitleEdit',
-        'click .delete-lead': 'deleteLead',
-        'keyup .search-bar': 'searchLeads'        
+        'click .delete-lead': 'deleteLead'     
     },
 
     render: function() {
         this.$el.html(JST['leads/show'](this.model.toJSON()));
+        var newOpportunitiesView = new App.OpportunitiesView();
+        newOpportunitiesView.render();
         return this;
     },
 
@@ -38,19 +39,15 @@ App.ShowLeadView = Backbone.View.extend ({
     },
 
     deleteLead: function(event) {
-        alert("Are you sure you want to delete this lead?");
-        event.stopPropagation();
-        this.$el.fadeOut();
-        // this.model.destroy({ success: function(){
-        //     this.navigate('leads', { trigger: true });
-        // }});
-        this.model.destroy();
-        this.remove();
-    },
+        if(confirm("Are you sure you want to delete this lead?")) {
+            event.stopPropagation();
+            this.$el.fadeOut();
+            this.model.destroy().then(function() {
+                App.router.openPage('leads', { trigger: true });
+            });
+            this.remove();
+        }
 
-    searchLeads: function() {
-        console.log("this is the search bar");
     }
-
 
 });

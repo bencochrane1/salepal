@@ -20,8 +20,8 @@ App.Router = Backbone.Router.extend({
   allLeads: function() {
     var leadsCollection = new App.Leads();
     leadsCollection.fetch().then(function() {
-      var leadsView = new App.LeadsView( { collection: leadsCollection });
-      $("#container").html(leadsView.render().el);
+      App.leadsView = new App.LeadsView( { collection: leadsCollection });
+      $("#container").html(App.leadsView.render().el);
     });
   },
 
@@ -45,11 +45,14 @@ App.Router = Backbone.Router.extend({
     var newOpportunityCollection = new App.Opportunities();
 
     newLeadCollection.fetch().then(function() {
-      newOpportunityCollection.fetch().then(function() {
+      newOpportunityCollection.fetch({ data: { lead_id: id }}).then(function(data) {
 
-      var leadModel = newLeadCollection.get(id);
-      var showLeadView = new App.ShowLeadView( { model: leadModel });
-      $("#container").html(showLeadView.render().el);
+        var leadModel = newLeadCollection.get(id);
+        var showLeadView = new App.ShowLeadView( { model: leadModel });
+        $("#container").html(showLeadView.render().el);
+
+        var newOpportunitiesView = new App.OpportunitiesView();
+        newOpportunitiesView.render(data);
 
       });
 
@@ -64,8 +67,21 @@ $("body").on("click", "a", function(event) {
   event.preventDefault();
   var href = $(this).attr("href");
   App.router.openPage(href);
+});
+
+$("body").on("keyup", ".search-bar", function(event) {
+  App.router.navigate('leads', { trigger: true });
+  App.leadsView.searchLeads();
+  // var searchInput = $(".search-bar").val();
+  // console.log(searchInput);
 
 });
 
 
+// $('input.new-lead-input').keyup(function(event) {
+//   event.preventDefault();
+//   if(event.keyCode == 13) {
+//     $(this).trigger('enter');
+//   }
+// });
 
