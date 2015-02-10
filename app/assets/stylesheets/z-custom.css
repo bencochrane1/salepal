@@ -377,3 +377,30 @@ body, .nav.navbar-nav.side-nav, #wrapper {
 .new-opp-trash:hover {
     cursor: pointer;
 }
+
+.google-user-dropdown {
+    margin-right: 2em;
+    position: relative;
+}
+
+
+.google-user-dropdown:hover {
+
+}
+
+.google-user-dropdown:focus {
+    border: none;
+}
+
+.google-user-flyout {
+    margin-right: 1em;
+}
+
+.dropdown-toggle {
+    height: 70px;
+    /*padding-bottom: 2em;*/
+}
+
+.google-image-dropdown {
+    height: 3em;
+}

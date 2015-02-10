@@ -85,12 +85,12 @@ App.ShowLeadView = Backbone.View.extend ({
         var value = this.$el.find('.opp-value').val();
         var assigned_to = this.$el.find('.opp-assigned-dropdown').val();
         var comments = this.$el.find('.opportunity-comments').val();
-        
-        if (status == "" || confidence == "" || value == "" || assigned_to == "" || comments == "") {
-          alert("Let's put in at least the value for this opportunity.");
-        } else {
+        debugger;
+        // if (status == "" || confidence == "" || value == "" || assigned_to == "" || comments == "") {
+        //   alert("Let's put in at least the value for this opportunity.");
+        // } else {
         var newOpportunity = App.newOpportunityCollection.create({ status: status });  
-        }
+        // }
     },
 
     appendNewOpportunity: function(opportunity) {
@@ -101,13 +101,13 @@ App.ShowLeadView = Backbone.View.extend ({
 
     renderOpportunityCreateForm: function(event) {
         event.preventDefault();
-        event.stopPropagation();
+        // event.stopPropagation();
         this.$el.find(".opportunity-edit-form-holder").html(JST['opportunities/edit-form']());
     }, 
 
     cancelNewOpportunity: function() {
         this.$el.find(".opportunity-edit-form-holder").fadeOut("fast");
-        opportunityView.render();
+        // App.newOpportunitiesView.render();
     }
 
 

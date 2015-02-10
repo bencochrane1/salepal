@@ -11,4 +11,6 @@ class SessionsController < ApplicationController
         redirect_to '/', notice: "Signed Out"        
     end
 
+
+
 end

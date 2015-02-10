@@ -1,10 +1,18 @@
+require "gmail_xoauth"
+
 class ApplicationController < ActionController::Base
-  # Prevent CSRF attacks by raising an exception.
-  # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
+  def connect_to_gmail(user)
+    puts current_user.email
+    puts current_user.token
+    imap = Net::IMAP.new('imap.gmail.com', 993, usessl = true, certs = nil, verify = false)
+    imap.authenticate('XOAUTH2', current_user.email, current_user.token)
+    messages_count = imap.status('INBOX', ['MESSAGES'])['MESSAGES']
+    puts "Seeing #{messages_count} messages in INBOX"
+  end
 
-  private
+  protected
 
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]

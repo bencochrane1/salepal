@@ -7,6 +7,9 @@ gem 'handlebars_assets'
 gem 'omniauth-google-oauth2'
 gem 'json'
 
+gem 'gmail'
+gem 'nokogiri'
+
 gem 'bootstrap-slider-rails'
 
 gem 'sass-rails', '~> 5.0'

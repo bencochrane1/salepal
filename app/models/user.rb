@@ -12,6 +12,7 @@ class User < ActiveRecord::Base
             user.last_name = auth["info"]["last_name"]
             user.email = auth["info"]["email"]
             user.image = auth["info"]["image"]
+            user.token = auth[:credentials][:token]
         end
     end
 
@@ -40,3 +41,7 @@ end
 
 # end
 #     
+
+
+
+# $ python oauth2.py --generate_oauth2_token --client_id=458523020971-7gage9nokkbddatdtn7crsdauovsi7bc.apps.googleusercontent.com --client_secret=HzCGBsgt72E6wI9zdXP4q6oh
