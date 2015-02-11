@@ -13,6 +13,10 @@ table {
   box-shadow:              1px 1px 6px 1px lightgrey;    
 }
 
+pre {
+    font-family: 'Droid Sans', sans-serif !important;
+}
+
 .collapse.navbar-collapse.navbar-ex1-collapse {
     background-color: #fed587;
     color: #9da3b3 !important;
@@ -64,6 +68,11 @@ body, .nav.navbar-nav.side-nav, #wrapper {
     line-height: 2em !important;
     position: relative;
     left: 3.5em;
+
+}
+
+a.navbar-brand {
+    color: #4c5365;
 }
 
 
@@ -192,7 +201,12 @@ body, .nav.navbar-nav.side-nav, #wrapper {
     border-radius: 2em;
     position: relative;
     top: -0.3em;
-    border: 3px solid grey;
+    border: 3px solid lightgrey;
+    transition: border 0.5s ease;
+}
+
+.timeline-profile-image:hover {
+    border: 3px solid #57bb89;
 }
 
 .salesperson-first-name {
@@ -318,6 +332,7 @@ body, .nav.navbar-nav.side-nav, #wrapper {
     transition: color 0.2s ease;
 }
 
+
 .cancel-title-edit {
     margin-left: 0.5em;
 }
@@ -392,11 +407,15 @@ body, .nav.navbar-nav.side-nav, #wrapper {
 .google-user-dropdown {
     margin-right: 2em;
     position: relative;
+    color: #4c5365;
+    padding: 0.5em;
+    transition: background-color 0.3s ease;
+    border-radius: 2.5em;
 }
 
 
 .google-user-dropdown:hover {
-
+    background-color: #FAC869;
 }
 
 .google-user-dropdown:focus {
@@ -409,7 +428,9 @@ body, .nav.navbar-nav.side-nav, #wrapper {
 
 .dropdown-toggle {
     height: 70px;
-    /*padding-bottom: 2em;*/
+}
+
+.dropdown-toggle:hover {
 }
 
 .google-image-dropdown {
@@ -418,5 +439,35 @@ body, .nav.navbar-nav.side-nav, #wrapper {
 
 
 .add-button:hover {
+    color: #57bb89;
+}
+
+.col-md-5.lead-status-dropdown-move {
+    position: relative;
+    top: -2em;
+}
+
+.img-circle.salespal-logo-white {
+    background-color: white;
+    height: 2em;
+}
+
+ul.nav.nav-tabs {
+    margin-bottom: 1em;
+    position: relative;
+    margin-left: 4em;
+}
+
+a#tab {
+    height: 4em;
+    line-height: 3em;
+}
+
+li.nav {
+    width: 8em;
+    text-align: center;
+}
+
+.edit-opportunity:hover {
     color: #57bb89;
 }

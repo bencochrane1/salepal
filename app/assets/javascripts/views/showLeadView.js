@@ -11,18 +11,19 @@ App.ShowLeadView = Backbone.View.extend ({
         'click .create-opportunity-button': 'renderOpportunityCreateForm', 
         'click .save-opportunity-button': 'saveOpportunityCreateForm', 
         'click .cancel': 'cancelNewOpportunity',
-        'click .new-opp-trash': 'cancelNewOpportunity'
+        'click .new-opp-trash': 'cancelNewOpportunity',
+        'click .edit-opportunity': 'renderEditOpportunityForm'
     },
 
     initialize: function() {
-        App.newOpportunityView = new App.OpportunityView();
-        App.newOpportunityView.on("change", this.appendNewOpportunity, this);
+        // App.newOpportunityView = new App.OpportunityView();
+        App.newOpportunityCollection.on("add", this.appendNewOpportunity, this);
     },    
 
     render: function() {
         this.$el.html(JST['leads/show'](this.model.toJSON()));
-        var newOpportunitiesView = new App.OpportunitiesView();
-        newOpportunitiesView.render();
+        // App.newOpportunitiesView = new App.OpportunitiesView();
+        // App.newOpportunitiesView.render();
         return this;
     },
 
@@ -89,13 +90,16 @@ App.ShowLeadView = Backbone.View.extend ({
         // if (status == "" || confidence == "" || value == "" || assigned_to == "" || comments == "") {
         //   alert("Let's put in at least the value for this opportunity.");
         // } else {
-        var newOpportunityCollection = new App.Opportunities();
-        var newOpportunity = newOpportunityCollection.create({ status: status });  
+        // var newOpportunityCollection = new App.Opportunities();
+        App.newOpportunityCollection.create({ status: status, value: value });
+        // var newOpportunity = App.newOpportunityCollection.create({ status: status, value: value });  
+        this.$el.find(".opportunity-edit-form-holder").fadeOut("fast");
         // }
     },
 
     appendNewOpportunity: function(opportunity) {
-        var opportunityView = new App.OpportunityView({ model: opportunity });
+        console.log("Append New Opportunity View run");
+        var opportunityView = new App.OpportunityView({ model: opportunity.toJSON() });
         this.$el.find(".opportunity-panel-holder").append(opportunityView.render().el);
     },
 
@@ -104,12 +108,17 @@ App.ShowLeadView = Backbone.View.extend ({
         event.preventDefault();
         // event.stopPropagation();
         this.$el.find(".opportunity-edit-form-holder").show();
-        this.$el.find(".opportunity-edit-form-holder").html(JST['opportunities/edit-form']());
+        this.$el.find(".opportunity-edit-form-holder").html(JST['opportunities/new-form']());
     }, 
 
     cancelNewOpportunity: function() {
         this.$el.find(".opportunity-edit-form-holder").fadeOut("fast");
         // App.newOpportunitiesView.render();
+    },
+
+    renderEditOpportunityForm: function(event) {
+        this.$el.find(".opportunity-edit-form-holder").show();
+        this.$el.find(".opportunity-edit-form-holder").html(JST['opportunities/edit-form'](this.model.toJSON()));
     }
 
 

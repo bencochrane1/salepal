@@ -74,7 +74,7 @@ App.Router = Backbone.Router.extend({
 
 App.router = new App.Router();
 
-$("body").on("click", "a", function(event) {
+$("body").on("click", "a:not(#tab)", function(event) {
   event.preventDefault();
   var href = $(this).attr("href");
   App.router.openPage(href);

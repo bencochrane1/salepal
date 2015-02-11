@@ -16,6 +16,7 @@
     <%= favicon_link_tag 'favicon.ico' %>
 
     <title>SalesPal</title>
+    <img src="..." alt="..." class="img-circle">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -29,8 +30,6 @@
 <body>
 
     <div id="wrapper">
-<!--     <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p> -->
         
         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         
@@ -41,7 +40,8 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">SalesPal</a>
+
+                <a class="navbar-brand" href="dashbaord">SalesPal</a>
 
             </div>
 
@@ -54,21 +54,7 @@
                   </div>
                 </form>
 
-            </div>
-
-
-<!--             <div class="navbar-header">
-
-                <h3 class="google-name">Google Name:  
-
-                    <% if current_user %>
-                        <%= current_user.full_name %>
-                        <%= link_to "Sign Out", signout_path %>
-                    <% end %>    
-
-                </h3>
-
-            </div>    -->         
+            </div>     
 
 
             <div class="navbar-header right">
@@ -106,7 +92,6 @@
                 <ul class="nav navbar-nav side-nav">
                     <li>
                         <a class="company-logo" href="dashboard"><i class="fa fa-fw fa-dashboard"></i></a><br>
-                        <h3 class="company-heading">Boch Inc</h3>
                     </li>
                     <li>
                         <a href="dashboard"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
