@@ -1,30 +1,25 @@
 class EmailsController < ApplicationController
     def index
         if params["lead_id"]
-          render json: Email.where( { lead_id: params["lead_id"] } )  
+          render json: current_user.emails.where( { lead_id: params["lead_id"] } )  
         else
-          render json: Email.all
+          render json: current_user.emails.all
         end
     end
 
     def create
-        @email = Email.create(email_params)
+        @email = current_user.emails.create(email_params)
         render json: @email
     end
 
     def update
-        @email = Email.find(params[:id])
+        @email = current_user.emails.find(params[:id])
         @email.update(email_params)
     end
 
     def destroy
-        @email = Email.find(params[:id])
+        @email = current_user.emails.find(params[:id])
         @email.destroy
-    end
-
-    def test
-        @gmail_messages = connect_to_gmail
-        binding.pry
     end
 
     private

@@ -122,6 +122,7 @@ body, .nav.navbar-nav.side-nav, #wrapper {
 .timeline-options {
     position: relative !important;
     margin-left: 4em !important;
+    color: #4c5365;
 }
 
 .status-select {
@@ -296,6 +297,8 @@ body, .nav.navbar-nav.side-nav, #wrapper {
 
 .timeline-input-select {
     transition: background-color 0.3s ease;
+    color: #4c5365 !important;
+    border: none;
 }
 
 

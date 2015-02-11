@@ -10,10 +10,10 @@ App.EmailsView = Backbone.View.extend ({
   //   this.collection.on("change", this.appendNewOpportunity, this);
   // },
 
-  renderCollection: function (data) {
+  renderCollection: function (email_data) {
     $(".email-panel-holder").html("");
-    if (data) {
-      data.forEach(function(email){
+    if (email_data) {
+      email_data.forEach(function(email){
         var emailView = new App.EmailView({ model: email });
         // this.$el.find(".email-panel-holder").append(emailView.render().el);
         $(".email-panel-holder").append(emailView.render().el);
@@ -21,14 +21,14 @@ App.EmailsView = Backbone.View.extend ({
     }
   },
 
-  render: function (data) {
+  render: function (email_data) {
     this.$el.html(JST['leads/show']());
-    this.renderCollection(data);
+    this.renderCollection(email_data);
     return this;
   },
 
   renderOpportunityCreateForm: function() {
-    console.log("lets render the opportunity create form")
+    // console.log("lets render the opportunity create form")
     // this.$el.find('.input-field').show();
     // this.$el.find(".input-field").html(JST['flights/create-flight-form']());
     // this.$el.find('.create-flight-button').hide();

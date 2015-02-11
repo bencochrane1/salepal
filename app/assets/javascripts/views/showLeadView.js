@@ -78,18 +78,19 @@ App.ShowLeadView = Backbone.View.extend ({
     },
 
     saveOpportunityCreateForm: function(event, opportunity) {
-
+        console.log("youre trying to save this")
         event.preventDefault();
         var status = this.$el.find('#opp-status-dropdown').val();
         var confidence = this.$el.find('.opp-percentage').val();
         var value = this.$el.find('.opp-value').val();
         var assigned_to = this.$el.find('.opp-assigned-dropdown').val();
         var comments = this.$el.find('.opportunity-comments').val();
-        debugger;
+        // debugger;
         // if (status == "" || confidence == "" || value == "" || assigned_to == "" || comments == "") {
         //   alert("Let's put in at least the value for this opportunity.");
         // } else {
-        var newOpportunity = App.newOpportunityCollection.create({ status: status });  
+        var newOpportunityCollection = new App.Opportunities();
+        var newOpportunity = newOpportunityCollection.create({ status: status });  
         // }
     },
 
