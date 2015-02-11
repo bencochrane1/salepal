@@ -102,6 +102,7 @@ App.ShowLeadView = Backbone.View.extend ({
     renderOpportunityCreateForm: function(event) {
         event.preventDefault();
         // event.stopPropagation();
+        this.$el.find(".opportunity-edit-form-holder").show();
         this.$el.find(".opportunity-edit-form-holder").html(JST['opportunities/edit-form']());
     }, 
 

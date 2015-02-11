@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'email/index'
+
     scope '/api' do
         resources :leads
         resources :opportunities
@@ -7,6 +9,8 @@ Rails.application.routes.draw do
         resources :contacts
         resources :notes
         resources :sessions
+        resources :emails
+        get '/test' => "emails#test"
     end
 
     root 'welcome#landingpage'

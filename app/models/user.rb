@@ -1,7 +1,13 @@
 class User < ActiveRecord::Base
 
+    has_many :emails
+
+
     def self.from_omniauth(auth)
-        where(provider: auth.provider, uid: auth.uid).first || create_from_omniauth(auth)        
+        user = where(provider: auth.provider, uid: auth.uid).first || create_from_omniauth(auth)
+        user.token = auth[:credentials][:token]
+        user.save!
+        user
     end
 
     def self.create_from_omniauth(auth)
@@ -12,7 +18,6 @@ class User < ActiveRecord::Base
             user.last_name = auth["info"]["last_name"]
             user.email = auth["info"]["email"]
             user.image = auth["info"]["image"]
-            user.token = auth[:credentials][:token]
         end
     end
 

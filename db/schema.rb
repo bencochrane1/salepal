@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150210041129) do
+ActiveRecord::Schema.define(version: 20150211002210) do
 
   create_table "contacts", force: :cascade do |t|
     t.string   "name"
@@ -22,6 +22,18 @@ ActiveRecord::Schema.define(version: 20150210041129) do
     t.string   "url"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+    t.integer  "lead_id"
+  end
+
+  create_table "emails", force: :cascade do |t|
+    t.string   "subject"
+    t.string   "to"
+    t.string   "from"
+    t.string   "date_sent"
+    t.string   "message_body"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.integer  "user_id"
     t.integer  "lead_id"
   end
 

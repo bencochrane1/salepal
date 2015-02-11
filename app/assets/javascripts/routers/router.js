@@ -40,18 +40,30 @@ App.Router = Backbone.Router.extend({
 
   showLead: function(id) {
 
-    var newLeadCollection = new App.Leads();
-    var newOpportunityCollection = new App.Opportunities();
+    App.newLeadCollection = new App.Leads();
+    App.newOpportunityCollection = new App.Opportunities();
+    App.newEmailCollection = new App.Emails();
 
-    newLeadCollection.fetch().then(function() {
-      newOpportunityCollection.fetch({ data: { lead_id: id }}).then(function(data) {
+    App.newLeadCollection.fetch().then(function() {
 
-        var leadModel = newLeadCollection.get(id);
-        var showLeadView = new App.ShowLeadView( { model: leadModel });
-        $("#container").html(showLeadView.render().el);
+      App.newEmailCollection.fetch({ data: { lead_id: id }}).then(function(email_data) {
 
-        var newOpportunitiesView = new App.OpportunitiesView();
-        newOpportunitiesView.render(data);
+        App.newOpportunityCollection.fetch({ data: { lead_id: id }}).then(function(opportunity_data) {
+
+          
+          // $("#container").html(App.newEmailsView.render(data).el);        
+
+          var leadModel = App.newLeadCollection.get(id);
+          App.showLeadView = new App.ShowLeadView( { model: leadModel });
+          $("#container").html(App.showLeadView.render().el);
+
+          App.newOpportunitiesView = new App.OpportunitiesView();
+          App.newOpportunitiesView.render(opportunity_data);
+
+          App.newEmailsView = new App.EmailsView();
+          App.newEmailsView.render(email_data);
+
+        });
 
       });
 

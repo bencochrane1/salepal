@@ -18,6 +18,14 @@ table {
     color: #9da3b3 !important;
 }
 
+h3.panel-title {
+    color: #4c5365;
+}
+
+.panel-heading {
+    color: #4c5365;   
+}
+
 body, .nav.navbar-nav.side-nav, #wrapper {
     background-color: #4c5365 !important;
     color: #9da3b3 !important;
@@ -403,4 +411,9 @@ body, .nav.navbar-nav.side-nav, #wrapper {
 
 .google-image-dropdown {
     height: 3em;
+}
+
+
+.add-button:hover {
+    color: #57bb89;
 }
