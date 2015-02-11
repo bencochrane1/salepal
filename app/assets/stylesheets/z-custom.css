@@ -471,3 +471,97 @@ li.nav {
 .edit-opportunity:hover {
     color: #57bb89;
 }
+
+.intro-header {
+    background: 
+
+    linear-gradient(
+      rgba(0, 0, 0, 0.5), 
+      rgba(0, 0, 0, 0.5)
+    ),
+
+    url('intro-bg.jpg') no-repeat center center; 
+    /*url('http://upload.wikimedia.org/wikipedia/commons/d/d1/Sydney_Harbour_Bridge_from_Circular_Quay.jpg') no-repeat center center; */
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+
+
+.network-name {
+    background-color: #57bb89;
+    transition: background-color 0.3s ease;
+    color: white;
+    border: none;
+    border
+}
+
+.network-name:hover {
+    background-color: #3D8360;
+    color: white;
+}
+
+
+.navbar-brand.topnav {
+    font-size: 2em;
+    position: relative;
+    top: -0.5em;
+    left: 0em;
+}
+
+
+
+.landing-page-interface {
+    /*max-height: 3%;*/
+    max-width: 40em;
+}
+
+
+.img-rounded-screen {
+    min-height: 20em;
+    background: url('salespal-screen.png') no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;    
+}
+
+.img-rounded-quick {
+    min-height: 20em;
+    background: url('salespal-screen.png') no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;    
+}
+
+.img-rounded-predictive {
+    min-height: 20em;
+    background: url('salespal-screen.png') no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;    
+}
+
+
+
+.navbar.navbar-default.navbar-fixed-top.topnav {
+    background-color: #4c5365;
+    border: none;
+}
+
+
+.navbar-default .navbar-nav>li>a, .navbar-default .navbar-brand {
+    color: #f9f9f9;
+    transition: color 0.3s ease;
+}
+
+
+.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-brand:hover {
+    color: #57bb89;
+}
+
+
