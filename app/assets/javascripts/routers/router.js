@@ -55,27 +55,40 @@ App.Router = Backbone.Router.extend({
     App.newLeadCollection = new App.Leads();
     App.newOpportunityCollection = new App.Opportunities();
     App.newEmailCollection = new App.Emails();
+    App.newContactCollection = new App.Contacts();
 
     App.newLeadCollection.fetch().then(function() {
 
       App.newEmailCollection.fetch({ data: { lead_id: id }}).then(function(email_data) {
 
-        App.newOpportunityCollection.fetch({ data: { lead_id: id }}).then(function(opportunity_data) {
+          App.newOpportunityCollection.fetch({ data: { lead_id: id }}).then(function(opportunity_data) {
 
-          
-          // $("#container").html(App.newEmailsView.render(data).el);        
 
-          var leadModel = App.newLeadCollection.get(id);
-          App.showLeadView = new App.ShowLeadView( { model: leadModel });
-          $("#container").html(App.showLeadView.render().el);
 
-          App.newOpportunitiesView = new App.OpportunitiesView();
-          App.newOpportunitiesView.render(opportunity_data);
+                var leadModel = App.newLeadCollection.get(id);
+                App.showLeadView = new App.ShowLeadView( { model: leadModel });
+                $("#container").html(App.showLeadView.render().el);
 
-          App.newEmailsView = new App.EmailsView();
-          App.newEmailsView.render(email_data);
+                App.newOpportunitiesView = new App.OpportunitiesView();
+                App.newOpportunitiesView.render(opportunity_data);
 
-        });
+                App.newEmailsView = new App.EmailsView();
+                App.newEmailsView.render(email_data);
+
+
+                // App.newContactCollection.fetch({ data: { lead_id: id }}).then(function(contact_data) {
+                
+                //   App.newContactsView = new App.ContactsView();
+                //   App.newContactsView.render(contact_data);
+                //   // $("#container").html(App.newEmailsView.render(data).el);        
+
+                // });
+
+
+              
+
+          });
+
 
       });
 

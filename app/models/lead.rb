@@ -1,10 +1,14 @@
 require 'csv'
 
 class Lead < ActiveRecord::Base
+
+  validates :lead, presence: true
+
     has_many :opportunities
     has_many :tasks
     has_many :notes
     has_many :emails
+    has_many :contacts
 
     belongs_to :user
 

@@ -6,9 +6,10 @@ App.LeadsView = Backbone.View.extend ({
     'click tr': 'linkToLeadShow',
     'click button.create-new-lead': 'createNewLead',
     'submit form.create-new-lead': 'createNewLead',
-    'keyup .search-bar': 'searchLeads'     
+    'keyup .search-bar': 'searchLeads',     
+    // 'dblclick #page-wrapper': 'dragNewLeads',
+    'mousedown window': 'renderFileUploadOutline',
   },
-
 
   initialize: function() {
     this.collection.on("change", this.appendNewLead, this);
@@ -54,7 +55,7 @@ App.LeadsView = Backbone.View.extend ({
   },
 
   addAllNewLeads: function() {
-    
+
   },
 
   searchLeads: function() {
@@ -68,7 +69,25 @@ App.LeadsView = Backbone.View.extend ({
       this.renderCollection(this.collection.filterBySearch(searchInput));   
     }
 
-  }
+  },
+
+  renderFileUploadOutline: function() {
+
+    // var isDown;
+
+    $('#page-wrapper').mouseenter(function() {
+    console.log("i'm in the mousedown");  
+      // var isDown = true;
+    // })
+    // .mouseup(function() {
+    //   var isDown = false;
+    // });
+
+    // if (isDown) {
+    //   console.log("dragging!");  
+    // }
+
+  })}
 
 });
 

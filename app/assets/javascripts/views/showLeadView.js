@@ -13,10 +13,10 @@ App.ShowLeadView = Backbone.View.extend ({
         'click .cancel': 'cancelNewOpportunity',
         'click .new-opp-trash': 'cancelNewOpportunity',
         'click .edit-opportunity': 'renderEditOpportunityForm'
+    
     },
 
     initialize: function() {
-        // App.newOpportunityView = new App.OpportunityView();
         App.newOpportunityCollection.on("add", this.appendNewOpportunity, this);
     },    
 
@@ -104,23 +104,24 @@ App.ShowLeadView = Backbone.View.extend ({
         this.$el.find(".opportunity-panel-holder").append(opportunityView.render().el);
     },
 
-
     renderOpportunityCreateForm: function(event) {
         event.preventDefault();
-        // event.stopPropagation();
         this.$el.find(".opportunity-edit-form-holder").show();
         this.$el.find(".opportunity-edit-form-holder").html(JST['opportunities/new-form']());
     }, 
 
     cancelNewOpportunity: function() {
         this.$el.find(".opportunity-edit-form-holder").fadeOut("fast");
-        // App.newOpportunitiesView.render();
     },
 
-    renderEditOpportunityForm: function(event) {
-        this.$el.find(".opportunity-edit-form-holder").show();
-        this.$el.find(".opportunity-edit-form-holder").html(JST['opportunities/edit-form'](this.model.toJSON()));
+    renderEditOpportunityForm: function(event, opportunity) {
+        // var opportunityView = new App.OpportunityView
+        // $(event.currentTarget).find(".opportunity-panel").html(JST['opportunities/edit-form'](opportunity.toJSON()));
+        // console.log(target);
+        // this.$el.find(".opportunity-edit-form-holder").show();
+        // $(event.currentTarget).find(".opportunity-panel").html(JST['opportunities/edit-form'](this.model.toJSON()));
     }
+
 
 
 

@@ -66,22 +66,32 @@ $(function() {
 });
 
 
-$(document).ready(function(){
-    Dropzone.autoDiscover = false;
+// $(document).ready(function(){
+//     Dropzone.autoDiscover = false;
  
-    // if ($('#csv-upload-form').length > 0) {
+//     // if ($('#csv-upload-form').length > 0) {
 
-    //     $('#file').dropzone({
-    //         maxFilesize: 10,
-    //         url: $('#csv-upload-form').attr('action'),
-    //         paramName: 'file',
-    //         addRemoveLinks: true,
-    //         success: function(file, response) {
-    //             console.log(response);
-    //         },
-    //         headers: { "X-CSRF-Token": $("meta[name=\"csrf-token\"").attr("content"), "Accepts": "application/json" }
-    //     }); 
-    // }
+//     //     $('#file').dropzone({
+//     //         maxFilesize: 10,
+//     //         url: $('#csv-upload-form').attr('action'),
+//     //         paramName: 'file',
+//     //         addRemoveLinks: true,
+//     //         success: function(file, response) {
+//     //             console.log(response);
+//     //         },
+//     //         headers: { "X-CSRF-Token": $("meta[name=\"csrf-token\"").attr("content"), "Accepts": "application/json" }
+//     //     }); 
+//     // }
     
-});
+// });
 
+
+
+$(document).on('dragover', function(e) {
+    console.log("you are dragging!!!!");
+    // var dt = e.originalEvent.dataTransfer;
+    // if(dt.types != null && (dt.types.indexOf ? dt.types.indexOf('Files') != -1 : dt.types.contains('application/x-moz-file'))) {
+    //     $("#dropzone").show();
+    //     window.clearTimeout(dragTimer);
+    }
+);
