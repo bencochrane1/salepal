@@ -1,14 +1,16 @@
 class OpportunitiesController < ApplicationController
   def index
-    if params["lead_id"]
-      render json: Opportunity.where( { lead_id: params["lead_id"] } )  
+    if params[:lead_id]
+      render json: Opportunity.where( { lead_id: params[:lead_id] } )  
     else
       render json: Opportunity.all
     end
   end
 
   def create
-    @opportunity = Opportunity.create(opportunity_params)
+    # @lead = Lead.find(params[:lead_id])
+    # @opportunity = @lead.opportunity.create(opportunity_params)
+    @opportunity = current_user.opportunities.create(opportunity_params)
     render json: @opportunity
   end
 
@@ -27,7 +29,7 @@ class OpportunitiesController < ApplicationController
   private
 
   def opportunity_params
-    params.require(:opportunity).permit(:status, :confidence, :value, :frequency, :comments, :user_id, :lead_id)
+    params.require(:opportunity).permit(:status, :confidence, :value, :frequency, :comments, :lead_id)
   end
 
 end

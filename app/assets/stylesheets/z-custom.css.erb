@@ -26,6 +26,15 @@ h3.panel-title {
     color: #4c5365;
 }
 
+h1.lead-title {
+    font-size: 1.8em;
+    font-weight: lighter;
+}
+
+h1.lead-title a {
+    font-size: 1.5em;
+}
+
 .panel-heading {
     color: #4c5365;   
 }
@@ -68,13 +77,11 @@ body, .nav.navbar-nav.side-nav, #wrapper {
     line-height: 2em !important;
     position: relative;
     left: 3.5em;
-
 }
 
 a.navbar-brand {
     color: #4c5365;
 }
-
 
 .leads-hover tbody tr:hover {
     cursor: pointer;
@@ -84,6 +91,8 @@ a.navbar-brand {
     min-height: calc(100vh - 50px);
     overflow-y: scroll; 
     background-color: #f9f9f9;
+    position: relative;
+    top: -0.1em;
 }
 
 .edit-task {
@@ -250,13 +259,15 @@ a.navbar-brand {
     position: relative;
     left: 5.3em;
     top: 1em;
-    margin-bottom: -1em;
+    margin-bottom: 2em;
     border-radius: 4em;
     background-color: #fed587;
+    /*padding-bottom: 1.5em;*/
 }
 
-.side-nav li a, .side-nav li a {
+.side-nav li a {
     transition: background-color 0.3s ease;
+    padding-left: 2em;
 }
 
 .side-nav li a:hover, .side-nav li a:focus {
@@ -547,7 +558,7 @@ li.nav {
 
 
 .navbar.navbar-default.navbar-fixed-top.topnav {
-    background-color: #4c5365;
+    background-color: rgba(76, 83, 101, 0.7);
     border: none;
 }
 

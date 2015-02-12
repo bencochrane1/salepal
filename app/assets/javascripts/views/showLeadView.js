@@ -86,12 +86,13 @@ App.ShowLeadView = Backbone.View.extend ({
         var value = this.$el.find('.opp-value').val();
         var assigned_to = this.$el.find('.opp-assigned-dropdown').val();
         var comments = this.$el.find('.opportunity-comments').val();
+
         // debugger;
         // if (status == "" || confidence == "" || value == "" || assigned_to == "" || comments == "") {
         //   alert("Let's put in at least the value for this opportunity.");
         // } else {
         // var newOpportunityCollection = new App.Opportunities();
-        App.newOpportunityCollection.create({ status: status, value: value });
+        App.newOpportunityCollection.create({ status: status, value: value, lead_id: this.model.get('id') });
         // var newOpportunity = App.newOpportunityCollection.create({ status: status, value: value });  
         this.$el.find(".opportunity-edit-form-holder").fadeOut("fast");
         // }

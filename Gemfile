@@ -7,6 +7,7 @@ gem 'handlebars_assets'
 gem 'omniauth-google-oauth2'
 gem 'json'
 
+gem 'clockwork'
 gem 'gmail'
 gem 'nokogiri'
 

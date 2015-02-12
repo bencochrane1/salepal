@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
 
     has_many :emails
+    has_many :opportunities
 
 
     def self.from_omniauth(auth)
