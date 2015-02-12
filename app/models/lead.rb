@@ -2,7 +2,7 @@ require 'csv'
 
 class Lead < ActiveRecord::Base
 
-  validates :lead, presence: true
+  # validates :lead, presence: true
 
     has_many :opportunities
     has_many :tasks
