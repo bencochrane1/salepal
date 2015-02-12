@@ -69,21 +69,19 @@ $(function() {
 $(document).ready(function(){
     Dropzone.autoDiscover = false;
  
-    if ($('#page-wrapper').length > 0) {
+    // if ($('#csv-upload-form').length > 0) {
 
-        $('#file').dropzone({
-            maxFilesize: 10,
-            url: $('#page-wrapper').attr('action'),
-            paramName: 'file',
-            addRemoveLinks: true,
-            success: function(file, response) {
-                console.log(response);
-            },
-            headers: { "X-CSRF-Token": $('#csv-upload-form').find("[name=\"authenticity_token\"]").val(), "Accepts": "application/json" }
-        }); 
-
-
-    }
+    //     $('#file').dropzone({
+    //         maxFilesize: 10,
+    //         url: $('#csv-upload-form').attr('action'),
+    //         paramName: 'file',
+    //         addRemoveLinks: true,
+    //         success: function(file, response) {
+    //             console.log(response);
+    //         },
+    //         headers: { "X-CSRF-Token": $("meta[name=\"csrf-token\"").attr("content"), "Accepts": "application/json" }
+    //     }); 
+    // }
     
 });
 

@@ -1,3 +1,5 @@
+require 'csv'
+
 class Lead < ActiveRecord::Base
     has_many :opportunities
     has_many :tasks

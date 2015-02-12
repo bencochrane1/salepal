@@ -12,6 +12,7 @@ App.LeadsView = Backbone.View.extend ({
 
   initialize: function() {
     this.collection.on("change", this.appendNewLead, this);
+    this.collection.on("add", this.render, this);
   },
 
   renderCollection: function (data) {

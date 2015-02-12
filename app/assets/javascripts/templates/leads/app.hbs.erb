@@ -19,7 +19,6 @@
                     <small class="right">Upload New Leads</small>
                 </h1>
 
-
             </div>
         </div>
         
@@ -34,6 +33,12 @@
         </div>
         
 
+
+this is the drop zone below:
+        <form id="csv-upload-form" enctype="multipart/form-data" action="/api/leads/import" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token">
+                  <input type="file" name="file" id="file" class="dz-clickable">
+                    <input type="submit" class="upload-csv-button" name="commit" value="Upload">
+        </form>
 
       
 
