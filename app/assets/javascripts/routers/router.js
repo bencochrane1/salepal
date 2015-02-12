@@ -17,17 +17,19 @@ App.Router = Backbone.Router.extend({
   },
 
   allLeads: function() {
-    var leadsCollection = new App.Leads();
-    leadsCollection.fetch().then(function() {
-      App.leadsView = new App.LeadsView( { collection: leadsCollection });
+    App.leadsCollection = new App.Leads();
+    App.leadsCollection.fetch().then(function() {
+      App.leadsView = new App.LeadsView( { collection: App.leadsCollection });
       $("#container").html(App.leadsView.render().el);
-      $('#file').dropzone({
+      $('#page-wrapper').dropzone({
           maxFilesize: 10,
           url: $('#csv-upload-form').attr('action'),
           paramName: 'file',
           addRemoveLinks: true,
           success: function(file, response) {
-              console.log(response);
+              App.leadsCollection.fetch().then(function () {
+                App.leadsView.render();
+              });
           },
           headers: { "X-CSRF-Token": $("meta[name=\"csrf-token\"").attr("content"), "Accepts": "application/json" }
       }); 

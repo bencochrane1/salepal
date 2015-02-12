@@ -12,7 +12,6 @@ App.LeadsView = Backbone.View.extend ({
 
   initialize: function() {
     this.collection.on("change", this.appendNewLead, this);
-    this.collection.on("add", this.render, this);
   },
 
   renderCollection: function (data) {
@@ -52,6 +51,10 @@ App.LeadsView = Backbone.View.extend ({
   appendNewLead: function(lead) {
     var leadView = new App.LeadView({ model: lead });
     this.$el.find(".leads-hover").append(leadView.render().el);
+  },
+
+  addAllNewLeads: function() {
+    
   },
 
   searchLeads: function() {

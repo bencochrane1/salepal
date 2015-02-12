@@ -10,13 +10,13 @@
                     Leads 
                     <button type="button" class="btn btn-default new-lead" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" ><span class="glyphicon glyphicon-plus"></span> New Lead</button>
 
-                    <form class="form-inline inline">
+<!--                     <form class="form-inline inline">
                       <div class="form-group">
                         <input type="text" class="form-control search-bar" placeholder="Search Leads">
                       </div>
-                    </form>
+                    </form> -->
 
-                    <small class="right">Upload New Leads</small>
+                    <small class="right">Drop a file anywhere new leads</small>
                 </h1>
 
             </div>
@@ -33,9 +33,7 @@
         </div>
         
 
-
-this is the drop zone below:
-        <form id="csv-upload-form" enctype="multipart/form-data" action="/api/leads/import" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token">
+        <form class="none" id="csv-upload-form" enctype="multipart/form-data" action="/api/leads/import" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token">
                   <input type="file" name="file" id="file" class="dz-clickable">
                     <input type="submit" class="upload-csv-button" name="commit" value="Upload">
         </form>
