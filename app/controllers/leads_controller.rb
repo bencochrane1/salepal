@@ -1,8 +1,21 @@
 class LeadsController < ApplicationController
 
   def index
+
+    respond_to do |format|
+      format.html
+      format.json { render json: Lead.all }
+      format.csv { send_data Lead.all.to_csv }
+      format.xls
+    end
+
+  end
+
+  def import
+    Lead.import(params[:file])
     render json: Lead.all
   end
+
 
   def create
     @lead = Lead.create(lead_params)

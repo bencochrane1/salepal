@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   get 'email/index'
 
     scope '/api' do
-        resources :leads
+        resources :leads do
+            collection { post :import }
+        end
         resources :opportunities
         resources :tasks
         resources :contacts
