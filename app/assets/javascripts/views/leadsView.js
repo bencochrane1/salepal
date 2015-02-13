@@ -12,7 +12,7 @@ App.LeadsView = Backbone.View.extend ({
   },
 
   initialize: function() {
-    this.collection.on("change", this.appendNewLead, this);
+    this.collection.on("add", this.appendNewLead, this);
   },
 
   renderCollection: function (data) {
@@ -52,6 +52,17 @@ App.LeadsView = Backbone.View.extend ({
   appendNewLead: function(lead) {
     var leadView = new App.LeadView({ model: lead });
     this.$el.find(".leads-hover").append(leadView.render().el);
+    // if ( $(".lead-add-success").hasClass("hidden") ) {
+    //   $(".lead-add-success").Class("hidden");
+    // }
+
+
+
+    setTimeout(function () {
+      if ( $(".lead-add-success").hasClass("hidden") ) {
+        $(".lead-add-success").removeClass("hidden");
+      }
+    }, 2000)
   },
 
   addAllNewLeads: function() {

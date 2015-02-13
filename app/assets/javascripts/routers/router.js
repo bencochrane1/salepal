@@ -29,6 +29,12 @@ App.Router = Backbone.Router.extend({
           success: function(file, response) {
               App.leadsCollection.fetch().then(function () {
                 App.leadsView.render();
+                $(".lead-add-success").removeClass("hidden");
+                if ( !$(".lead-add-success").hasClass("hidden") ) {
+                  setTimeout(function () {
+                    $(".lead-add-success").addClass("hidden");
+                  }, 2000)
+                }
               });
           },
           headers: { "X-CSRF-Token": $("meta[name=\"csrf-token\"").attr("content"), "Accepts": "application/json" }

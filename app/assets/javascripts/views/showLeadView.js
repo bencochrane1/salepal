@@ -95,7 +95,7 @@ App.ShowLeadView = Backbone.View.extend ({
         App.newOpportunityCollection.create({ status: status, value: value, lead_id: this.model.get('id') });
         // var newOpportunity = App.newOpportunityCollection.create({ status: status, value: value });  
         this.$el.find(".opportunity-edit-form-holder").fadeOut("fast");
-        // }
+        // }    
     },
 
     appendNewOpportunity: function(opportunity) {

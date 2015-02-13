@@ -581,12 +581,94 @@ input.upload-csv-button:active {
     display: none;
 }
 
-.create-opportunity-button {
+.create-opportunity-button, .create-task-button {
     transition: color 0.3s ease;
     cursor: pointer;
     color: #4c5365;
 }
 
-.create-opportunity-button:hover {
+.create-opportunity-button:hover, .create-task-button:hover {
     color: #57bb89; 
 }
+
+.hidden {
+    display: none;
+    /*animation: fadeInLoad 4s;*/
+}
+
+.showing {
+    visibility: showing;
+    animation: fadeOutLoad 4s;
+}
+
+.intro-header {
+    position: relative;
+    top: -1.5em;
+}
+
+
+@media (max-width: 768px) {
+
+    input.form-control.search-bar {
+        position: relative;
+        left: 0em;
+        top: -1em;
+        width: 26em;
+    }
+
+    a.navbar-brand {
+        position: relative;
+        left: 0em;
+        top: -0.5em;
+    }
+
+    .google-user-dropdown {
+        display: none;
+    }
+
+    .navbar.navbar-inverse.navbar-fixed-top {
+        background-color: #fed587;
+        height: 8em;
+    }
+
+    .navbar-inverse .navbar-toggle:focus, .navbar-inverse .navbar-toggle {
+        background-color: #f9f9f9;
+        border: none;
+    }
+
+    .navbar-inverse .navbar-toggle .icon-bar {
+        background-color: #fed587;
+    }
+
+    a.navbar-brand {
+        position: relative;
+        left: 0em;
+    }
+
+    .navbar-header {
+        background-color: #fed587;
+    }
+
+    .navbar-inverse .navbar-toggle:focus, .navbar-inverse .navbar-toggle:hover {
+        background-color: #9da3b3;
+    }
+
+    h1.page-header small.right {
+        display: none;
+    }
+
+    .nav.navbar-nav.side-nav li a.company-logo {
+        display: none;
+    }
+
+    .navbar-collapse.navbar-ex1-collapse.collapse.in {
+        background-color: #4c5365;
+    }
+
+
+}
+
+
+
+
+
