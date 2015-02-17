@@ -14,7 +14,7 @@ Rails.application.routes.draw do
     end
 
     root 'welcome#landingpage'
-    get "/leads" => "welcome#index", as: :leads
+    get "/leads" => "welcome#index", as: :all
 
     get "/auth/:provider/callback" => "sessions#create"
     get "/auth/failure", to: redirect('/')
