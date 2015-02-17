@@ -10,7 +10,7 @@ App.Router = Backbone.Router.extend({
     "leads": "allLeads",
     "leads/:id": "showLead",
     "dashboard": "theDashboard",
-    "": "allLeads",
+    "": "theDashboard",
     "smart-views": "smartViews",
     "reporting": "reportingView",
     "tasks": "allTasks"
