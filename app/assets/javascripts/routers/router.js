@@ -69,8 +69,6 @@ App.Router = Backbone.Router.extend({
 
           App.newOpportunityCollection.fetch({ data: { lead_id: id }}).then(function(opportunity_data) {
 
-
-
                 var leadModel = App.newLeadCollection.get(id);
                 App.showLeadView = new App.ShowLeadView( { model: leadModel });
                 $("#container").html(App.showLeadView.render().el);
@@ -80,18 +78,6 @@ App.Router = Backbone.Router.extend({
 
                 App.newEmailsView = new App.EmailsView();
                 App.newEmailsView.render(email_data);
-
-
-                // App.newContactCollection.fetch({ data: { lead_id: id }}).then(function(contact_data) {
-                
-                //   App.newContactsView = new App.ContactsView();
-                //   App.newContactsView.render(contact_data);
-                //   // $("#container").html(App.newEmailsView.render(data).el);        
-
-                // });
-
-
-              
 
           });
 

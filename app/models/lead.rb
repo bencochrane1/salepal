@@ -12,8 +12,6 @@ class Lead < ActiveRecord::Base
 
     belongs_to :user
 
-
-
     def self.import(file)
         CSV.foreach(file.path, headers: true) do |row|
             Lead.create! row.to_hash

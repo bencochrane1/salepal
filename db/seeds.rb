@@ -3,7 +3,6 @@ Opportunity.destroy_all
 Task.destroy_all
 Note.destroy_all
 Contact.destroy_all
-Email.destroy_all
 
 lead1 = Lead.create(title: "jack.hamblin@generalassemb.ly", status: "hot lead")
 lead2 = Lead.create(title: "penelope@generalassemb.ly", status: "warm lead")
