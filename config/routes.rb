@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'email/index'
-
     scope '/api' do
         resources :leads do
             collection { post :import }
@@ -16,7 +14,7 @@ Rails.application.routes.draw do
     end
 
     root 'welcome#landingpage'
-    get "/dashboard" => "welcome#index", as: :dashboard
+    get "/leads" => "welcome#index", as: :leads
 
     get "/auth/:provider/callback" => "sessions#create"
     get "/auth/failure", to: redirect('/')
